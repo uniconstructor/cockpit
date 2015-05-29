@@ -1,5 +1,13 @@
 <?php
 
+defined('YII_DEBUG') or define('YII_DEBUG', isset($_SERVER['YII_DEBUG']) ? $_SERVER['YII_DEBUG'] : true);
+defined('YII_ENV') or define('YII_ENV', isset($_SERVER['YII_ENV']) ? $_SERVER['YII_ENV'] : 'dev');
+
+require(__DIR__ . '/../../../vendor/autoload.php');
+require(__DIR__ . '/../../../vendor/yiisoft/yii2/Yii.php');
+require(__DIR__ . '/../../../common/config/bootstrap.php');
+require(__DIR__ . '/../../../backend/config/bootstrap.php');
+
 define('COCKPIT_ADMIN', 1);
 
 // set default url rewrite setting
