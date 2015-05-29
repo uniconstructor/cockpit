@@ -8,6 +8,14 @@ require(__DIR__ . '/../../../vendor/yiisoft/yii2/Yii.php');
 require(__DIR__ . '/../../../common/config/bootstrap.php');
 require(__DIR__ . '/../../../backend/config/bootstrap.php');
 
+$config = yii\helpers\ArrayHelper::merge(
+    require(__DIR__ . '/../../../common/config/main.php'),
+    require(__DIR__ . '/../../../common/config/main-local.php'),
+    require(__DIR__ . '/../../../backend/config/main.php'),
+    require(__DIR__ . '/../../../backend/config/main-local.php')
+);
+$yii = new yii\web\Application($config);
+
 define('COCKPIT_ADMIN', 1);
 
 // set default url rewrite setting
